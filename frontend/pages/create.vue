@@ -1,16 +1,12 @@
 <template>
-  <main>
-    <Navbar/>
-    <Nuxt/>
-
-  </main>
+  <div class="">
+    <h1>Creat CV</h1>
+  </div>
 </template>
 
 <script>
-
 export default {
-  name: "default",
-
+  name: "create"
 }
 </script>
 

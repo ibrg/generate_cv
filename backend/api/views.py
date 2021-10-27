@@ -1,5 +1,4 @@
 from rest_framework import viewsets
-
 from app_cv.models import CV
 from api.serializers import CVSerializers
 

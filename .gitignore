@@ -237,3 +237,5 @@ sw.*
 
 # Vim swap files
 *.swp
+/tmp
+/frontend/components/tmp

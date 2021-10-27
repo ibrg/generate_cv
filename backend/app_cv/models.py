@@ -4,11 +4,11 @@ from django.db import models
 class WorkExperience(models.Model):
     """Дополнительная часть Опыт работы"""
     company_name = models.CharField(verbose_name='Компания', max_length=100, blank=True, null=True)
-    work_position = models.CharField(verbose_name='Должнолсть', max_length=100,blank=True, null=True)
+    work_position = models.CharField(verbose_name='Должнолсть', max_length=100, blank=True, null=True)
     work_start = models.DateField(verbose_name='Дата начала', blank=True, null=True)
     work_end = models.DateField(verbose_name='Дата завершения', blank=True, null=True)
     work_now = models.BooleanField(blank=True, null=True)
-    description = models.TextField(max_length=1000, help_text="Обязанности, достижения",blank=True, null=True)
+    description = models.TextField(max_length=1000, help_text="Обязанности, достижения", blank=True, null=True)
 
     def __str__(self):
         return self.company_name
@@ -74,8 +74,8 @@ class CV(models.Model):
         verbose_name='Награды, сертификаты',
         help_text='Участие в олимпиадах, хакатонах, других профильных меропритиях. Курсы.',
         blank=True)
-    education = models.ForeignKey(Education, on_delete=models.SET_NULL, blank=True, null=True)
-    work_experience = models.ForeignKey(WorkExperience, on_delete=models.SET_NULL, blank=True, null=True)
+    education = models.ManyToManyField(Education, blank=True)
+    work_experience = models.ManyToManyField(WorkExperience, blank=True)
 
     def __str__(self):
         return self.title
