@@ -239,4 +239,4 @@ sw.*
 *.swp
 /tmp
 /frontend/components/tmp
-*-lock.json
+*package-lock.json
