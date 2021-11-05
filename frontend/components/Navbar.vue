@@ -1,16 +1,21 @@
 <template>
   <nav>
     <ul>
-      <nuxt-link to="/"> Home</nuxt-link>
-      <nuxt-link to="/create"> Create</nuxt-link>
-
+      <li>
+        <nuxt-link to="/">
+          Home
+        </nuxt-link>
+        <nuxt-link to="/cv/create">
+          Add
+        </nuxt-link>
+      </li>
     </ul>
   </nav>
 </template>
 
 <script>
 export default {
-  name: "Navbar"
+  name: 'Navbar'
 }
 </script>
 

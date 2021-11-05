@@ -240,3 +240,20 @@ sw.*
 /tmp
 /frontend/components/tmp
 *package-lock.json
+
+node_modules
+/dist
+
+
+# local env files
+.env.local
+.env.*.local
+pnpm-debug.log*
+
+# Editor directories and files
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

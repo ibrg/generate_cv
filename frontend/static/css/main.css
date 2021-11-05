@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  margin: 0 auto;
+  gap: 2rem;
+
+  max-width: 1440px;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: end;
+}
+
+
+input {
+  padding: 1rem;
+  margin-bottom: 15px;
+}
+select {
+  padding: 1.02rem;
+  background: transparent;
+  border: 1px solid #999;
+}
+option {
+  background: white;
+  padding: 0;
+}
+.btn {
+  padding: .7rem;
+  border: 1px solid #333;
+  width: 200px
+}
+

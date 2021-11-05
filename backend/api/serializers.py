@@ -8,6 +8,13 @@ class WorkSerializer(serializers.ModelSerializer):
         model = WorkExperience
         fields = ('company_name', 'work_position', 'work_start', 'work_end', 'work_now', 'description',)
 
+    def create(self, validated_data):
+        print(validated_data)
+
+        ser = WorkExperience.objects.create(**validated_data)
+        ser.save()
+        return ser
+
 
 class EducationSerializers(serializers.ModelSerializer):
     class Meta:
@@ -35,11 +42,10 @@ class CVSerializers(serializers.ModelSerializer):
         serializer = CV.objects.create(**validated_data)
 
         if work_data != '':
-            serializer.work_experience.add(*work_data)
+            serializer.work_experience.set(work_data)
 
         if edu_data != '':
-            serializer.education.add(*edu_data)
+            serializer.education.set(edu_data)
 
-        serializer.is_valid()
         serializer.save()
         return serializer
